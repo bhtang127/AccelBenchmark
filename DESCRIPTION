@@ -1,0 +1,20 @@
+Package: AccelBenchmark
+Type: Package
+Title: Benchmark Various Accelerating Methods for Fixed Point
+        Iterations
+Version: 0.3.0
+Date: 2022-05-07
+Author: Bohao Tang, Nicholas Henderson, Ravi Varadhan
+Maintainer: Bohao Tang <bhtang@jhu.edu>
+Depends: R (>= 3.5.0)
+Imports: BB, varbvs, ggplot2, dplyr, magrittr, MASS
+Description: Implements acceleration benchmark tools for various fixed point iteration problems. Accelerating methods include 'SQUAREM', 'DAAREM', 'Quasi-Newton', 'parabolic-EM' and 'restart Nesterov'. With this package, user can easily test the performance of these methods on their specific problem.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: xz
+RoxygenNote: 7.1.2
+Suggests: markdown, rmarkdown, knitr
+VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2022-05-08 06:22:07 UTC; bohao
