@@ -16,8 +16,8 @@
 #'  \item{tol}{A small, positive scalar that determines when iterations should be terminated, see \code{convtype} for details. Default is \code{1e-7}}
 #'  \item{maxiter}{An integer denoting the maximum limit on the number of evaluations of \code{fixptfn}. Default is 2000.}
 #'  \item{convtype}{A string indicating the convergence criteria.
-#'                 If it is "parameter", the algorithm will termenate when L2 norm of parameters difference \eqn{x_new - x_old < tol}.
-#'                 If it is "objfn", the algorithm will terminate when the absolute difference of objective function \eqn{|L_new - L_old| < tol}.
+#'                 If it is "parameter", the algorithm will termenate when L2 norm of parameters difference \eqn{x_{new} - x_{old} < tol}.
+#'                 If it is "objfn", the algorithm will terminate when the absolute difference of objective function \eqn{|L_{new} - L_{old}| < tol}.
 #'                 If it is "user" or \code{conv.spec} is not \code{NULL}. Then the convergence is guided by the user defined function \code{conv.spec}.
 #'                 Default is "parameter".}
 #'  \item{par.track}{An bool value indicating whether to track parameters along the algorithm. \code{TRUE} for tracking and \code{FALSE} for not. Default is \code{FALSE}}

@@ -14,14 +14,14 @@
 #'  \item{a}{A positive real number in the line search of geometric method. Default is 1.5.}
 #'  \item{h}{A positive real number indicating the step size in the line search step. Default is 0.1.}
 #'  \item{maxtry}{An integer variable indicating maximum number of try when searching for optimal step length in ever iteration. Default is Inf.}
-#'  \item{version}{A string indicating the method used in searching the step length \eqn{t}. \eqn{t = 1 + h*a^i} for "geometric" and \eqn{t = 1 + i*h} for "arithmetic". Default is "geometric".}
+#'  \item{version}{A string indicating the method used in searching the step length \eqn{t}. \eqn{t = 1 + h \times a^i} for "geometric" and \eqn{t = 1 + i \times h} for "arithmetic". Default is "geometric".}
 #'  \item{projection}{A function projecting the parameter after each iteration. Default is identity function \eqn{f(x) = x}.}
 #'  \item{objfn.inc}{A non-negative scalar that dictates the degree of non-montonicity. Default is 0. Set objfn.inc = 0 to obtain monotone convergence. Setting objfn.inc = Inf gives a non-monotone scheme. In-between values result in partially-monotone convergence.}
 #'  \item{tol}{A small, positive scalar that determines when iterations should be terminated, see \code{convtype} for details. Default is \code{1e-7}}
 #'  \item{maxiter}{An integer denoting the maximum limit on the number of evaluations of \code{fixptfn}. Default is 2000.}
 #'  \item{convtype}{A string indicating the convergence criteria.
-#'                 If it is "parameter", the algorithm will termenate when L2 norm of parameters difference \eqn{x_new - x_old < tol}.
-#'                 If it is "objfn", the algorithm will terminate when the absolute difference of objective function \eqn{|L_new - L_old| < tol}.
+#'                 If it is "parameter", the algorithm will termenate when L2 norm of parameters difference \eqn{x_{new} - x_{old} < tol}.
+#'                 If it is "objfn", the algorithm will terminate when the absolute difference of objective function \eqn{|L_{new} - L_{old}| < tol}.
 #'                 If it is "user" or \code{conv.spec} is not \code{NULL}. Then the convergence is guided by the user defined function \code{conv.spec}.
 #'                 Default is "parameter".}
 #'  \item{par.track}{An bool value indicating whether to track parameters along the algorithm. \code{TRUE} for tracking and \code{FALSE} for not. Default is \code{FALSE}}

@@ -3,16 +3,16 @@
 
 # library(AccelBenchmark)
 #
-# ####################################################################################
-# ## Poisson Mixture
+####################################################################################
+# Poisson Mixture
 # proj_poi = function(x){
 #   x[1] = max(min(x[1], 0.99), 0.01)
 #   x[2:3] = pmax(x[2:3], 0.01)
 #   x
 # }
-#
+# 
 # qn_control = list(qn=2)
-#
+# 
 # set.seed(54321)
 # res_poi = benchmark(
 #   "poissmix",
@@ -21,7 +21,7 @@
 #   control = list(maxiter=3000, projection=proj_poi, tol=1e-7),
 #   control.spec = list(qn=qn_control)
 # )
-#
+# 
 # summary(res_poi, rate_tol=0.01)
 #
 #
@@ -119,8 +119,8 @@
 # summary(res_tsne, loss_tol=0.3)
 #
 #
-# ##############################################################################
-# ## ipf
+##############################################################################
+## ipf
 # set.seed(54321)
 # res_m3 = benchmark(
 #   "sinkhorn",
@@ -133,6 +133,24 @@
 #     }
 #   ),
 #   control.spec = list(qn=list(qn=2)),
-#   mat="Marshall"
+#   mat="Hessenberg",
+#   order=50
+# )
+# summary(res_m3, loss_tol=1e-5)
+
+# set.seed(54321)
+# res_m3 = benchmark(
+#   "sinkhorn",
+#   algorithm=c("daarem"),
+#   ntimes = 10,
+#   control = list(
+#     maxiter=50000, tol=1e-10,
+#     conv.spec=function(xold, xnew, lold, lnew, tol){
+#       lnew < tol
+#     }
+#   ),
+#   control.spec = list(daarem=list(order=1, mon.tol=1)),
+#   mat="Hessenberg",
+#   order=50
 # )
 # summary(res_m3, loss_tol=1e-5)
